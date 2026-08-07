@@ -122,4 +122,42 @@ cp -r ui/taste-skill ~/.claude/skills/taste-skill
 
 ---
 
+## 同步 / 更新（Sync）
+
+本仓库是 **vendoring 快照**：每个 skill 是整目录拷进来的，丢了 git 血缘。上游一升级，不会自动跟着动。所以配套了"族谱 + 脚本"来手动/定时同步。
+
+### 机制
+- **`sync-manifest.json`** —— 每个 skill 的"族谱"：上游仓库 `repo`、要取的子目录 `subpath`、目标路径 `target`、来源类型 `source`（github / local）。
+  - `frontend-dev` 标记为 `local`（本机 WorkBuddy 私有，无上游，只在本机副本变化时刷新）。
+  - 其余 14 个都记了真实 GitHub 仓库 + 提取路径（很多来自 monorepo 的子目录，比如 `anthropics/skills` 里的 `skills/frontend-design`）。
+- **`sync.py`** —— 按谱执行同步：
+  1. GitHub 项用 **sparse-clone**（`--filter=blob:none --sparse`）只拉 `subpath` 子目录，不把整个大 monorepo / 大 registry 搬下来；
+  2. 自动解析上游默认分支（`git ls-remote --symref`）；
+  3. 覆盖拷贝到 `ui/<target>/`，自动排除 `.git` / `__MACOSX` / `.DS_Store`；
+  4. 把上游 commit sha 记进 **`sync-state.json`**，下次跑能判断"是否真有更新"；
+  5. 默认只更新工作区并打印报告；带 `--push` 才提交推送。
+- **`_sync/`** 是临时克隆目录（已 gitignore，不会进仓库）。
+
+### 用法
+```bash
+# 1) 只更新工作区 + 看报告（不提交）
+python sync.py
+
+# 2) 更新并直接提交 + 推送
+python sync.py --push
+
+# 3) 只同步某一个（改 manifest 临时注释其他，或手动跑）
+```
+> 要求：环境能走 SSH 推 GitHub（已配 `id_ed25519`），且能访问 github.com:22。
+
+### 定时自动同步
+仓库挂了一个**每周自动化**：自动 `git pull` → `python sync.py --push` → 报告哪些 skill 升级了。可在 WorkBuddy 自动化设置里改频率（比如改每月、或换成手动触发）。
+
+### 已知取舍
+- 同步是"上游覆盖本地"——如果你在仓库里手改过某个 skill，再 sync 会被上游覆盖（vendoring 的代价）。要本地改，请 fork 上游或另建分支。
+- 上游**删掉**的文件不会从 `ui/` 里自动移除（沙箱 safe-delete 禁止 rm，且保留无害）。极少情况下如需彻底对齐，手动删一次即可。
+- `animation-micro-interaction-pack` 上游是 `majiayu000/claude-skill-registry`（大仓库），靠 sparse-checkout 只取 `skills/data/animation-micro-interaction-pack`。
+
+---
+
 *本仓库仅作聚合与本地存档。各 skill 版权归原作者，license 见各自 `SKILL.md` / 源仓库。*

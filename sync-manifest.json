@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "description": "skills_collector 同步族谱：记录每个 ui/<name> 的上游来源，供 sync.py 按谱抓取新版覆盖。",
+  "skills": [
+    {
+      "name": "frontend-dev",
+      "target": "ui/frontend-dev",
+      "source": "local",
+      "local_path": "C:/Users/lybjl/.workbuddy/skills/frontend-dev",
+      "note": "本机 WorkBuddy 私有 skill，无上游，不被同步覆盖；仅在本机副本变化时刷新。"
+    },
+    {
+      "name": "taste-skill",
+      "target": "ui/taste-skill",
+      "source": "github",
+      "repo": "Leonxlnx/taste-skill",
+      "subpath": "skills",
+      "note": "反 Slop 设计总监全家桶，提取其 skills/ 子目录。"
+    },
+    {
+      "name": "gsap-skills",
+      "target": "ui/gsap-skills",
+      "source": "github",
+      "repo": "greensock/gsap-skills",
+      "subpath": "skills",
+      "note": "GreenSock 官方 8 模块，提取 skills/ 子目录。"
+    },
+    {
+      "name": "emil-skills",
+      "target": "ui/emil-skills",
+      "source": "github",
+      "repo": "emilkowalski/skills",
+      "subpath": "skills",
+      "note": "Emil Kowalski 技能集，提取 skills/ 子目录（含 emil-design-eng 等）。"
+    },
+    {
+      "name": "frontend-design",
+      "target": "ui/frontend-design",
+      "source": "github",
+      "repo": "anthropics/skills",
+      "subpath": "skills/frontend-design",
+      "note": "Anthropic 官方审美地基，提取 skills/frontend-design 子目录。"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "target": "ui/ui-ux-pro-max",
+      "source": "github",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "subpath": ".claude/skills/ui-ux-pro-max",
+      "note": "可检索规则库，提取 .claude/skills/ui-ux-pro-max 子目录。"
+    },
+    {
+      "name": "impeccable",
+      "target": "ui/impeccable",
+      "source": "github",
+      "repo": "pbakaus/impeccable",
+      "subpath": ".claude/skills/impeccable",
+      "note": "完整 UI 工作流，提取 .claude/skills/impeccable 子目录。"
+    },
+    {
+      "name": "web-design-guidelines",
+      "target": "ui/web-design-guidelines",
+      "source": "github",
+      "repo": "vercel-labs/agent-skills",
+      "subpath": "skills/web-design-guidelines",
+      "note": "Vercel 质量门禁，提取 skills/web-design-guidelines 子目录。"
+    },
+    {
+      "name": "extract-design-system",
+      "target": "ui/extract-design-system",
+      "source": "github",
+      "repo": "arvindrk/extract-design-system",
+      "subpath": "skills/extract-design-system",
+      "note": "Token 提取，提取 skills/extract-design-system 子目录。"
+    },
+    {
+      "name": "transitions-dev",
+      "target": "ui/transitions-dev",
+      "source": "github",
+      "repo": "Jakubantalik/transitions.dev",
+      "subpath": "skills",
+      "note": "27 个 CSS 过渡，提取 skills/ 子目录。"
+    },
+    {
+      "name": "ui-skills",
+      "target": "ui/ui-skills",
+      "source": "github",
+      "repo": "ibelick/ui-skills",
+      "subpath": "skills",
+      "note": "设计工程师 skill 注册中心，提取 skills/ 子目录。"
+    },
+    {
+      "name": "design-motion-principles",
+      "target": "ui/design-motion-principles",
+      "source": "github",
+      "repo": "kylezantos/design-motion-principles",
+      "subpath": "skills/design-motion-principles",
+      "note": "动效双模式（创建+审计），提取 skills/design-motion-principles 子目录。"
+    },
+    {
+      "name": "motion",
+      "target": "ui/motion",
+      "source": "github",
+      "repo": "Sagargupta16/claude-skills",
+      "subpath": "plugins/motion/skills/motion",
+      "note": "迪士尼 12 原则审计，提取 plugins/motion/skills/motion 子目录。"
+    },
+    {
+      "name": "interaction-design",
+      "target": "ui/interaction-design",
+      "source": "github",
+      "repo": "secondsky/claude-skills",
+      "subpath": "plugins/interaction-design/skills/interaction-design",
+      "note": "可访问交互模式，提取 plugins/interaction-design/skills/interaction-design 子目录。"
+    },
+    {
+      "name": "animation-micro-interaction-pack",
+      "target": "ui/animation-micro-interaction-pack",
+      "source": "github",
+      "repo": "majiayu000/claude-skill-registry",
+      "subpath": "skills/data/animation-micro-interaction-pack",
+      "note": "微交互预设，提取 skills/data/animation-micro-interaction-pack 子目录（源仓库体量较大，脚本用 sparse-checkout 只取该子目录）。"
+    }
+  ]
+}
