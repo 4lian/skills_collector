@@ -1,0 +1,107 @@
+{
+  "frontend-dev": {
+    "repo": "local",
+    "ref": "C:/Users/lybjl/.workbuddy/skills/frontend-dev",
+    "sha": "local:5594434649623632553",
+    "files": 100,
+    "synced_at": "2026-08-07T07:36:43.801472+00:00"
+  },
+  "taste-skill": {
+    "repo": "Leonxlnx/taste-skill",
+    "ref": "main\tHEAD",
+    "sha": "e988add20dab0fa97d7a76781c48961c8184288e",
+    "files": 15,
+    "synced_at": "2026-08-07T07:37:15.928866+00:00"
+  },
+  "gsap-skills": {
+    "repo": "greensock/gsap-skills",
+    "ref": "main\tHEAD",
+    "sha": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+    "files": 9,
+    "synced_at": "2026-08-07T07:37:38.832300+00:00"
+  },
+  "emil-skills": {
+    "repo": "emilkowalski/skills",
+    "ref": "main\tHEAD",
+    "sha": "de33dbed000212b54400a33767d1e4d03654db2a",
+    "files": 14,
+    "synced_at": "2026-08-07T07:38:00.908486+00:00"
+  },
+  "frontend-design": {
+    "repo": "anthropics/skills",
+    "ref": "main\tHEAD",
+    "sha": "b29e7cf65e5cb78a5ac33d582270551bc74a14eb",
+    "files": 2,
+    "synced_at": "2026-08-07T07:38:33.915995+00:00"
+  },
+  "ui-ux-pro-max": {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "ref": "main\tHEAD",
+    "sha": "abb7f2fd5a083fa1ff55c326a963ff0d95c33f99",
+    "files": 44,
+    "synced_at": "2026-08-07T07:39:10.370240+00:00"
+  },
+  "impeccable": {
+    "repo": "pbakaus/impeccable",
+    "ref": "main\tHEAD",
+    "sha": "aee6ce9352b842217b3f57c78296a7a4fa35a7f3",
+    "files": 147,
+    "synced_at": "2026-08-07T07:40:17.647608+00:00"
+  },
+  "web-design-guidelines": {
+    "repo": "vercel-labs/agent-skills",
+    "ref": "main\tHEAD",
+    "sha": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
+    "files": 1,
+    "synced_at": "2026-08-07T07:40:43.011343+00:00"
+  },
+  "extract-design-system": {
+    "repo": "arvindrk/extract-design-system",
+    "ref": "main\tHEAD",
+    "sha": "1873741ba8dea755e35e6e15134f7918cd58e036",
+    "files": 3,
+    "synced_at": "2026-08-07T07:41:02.379949+00:00"
+  },
+  "transitions-dev": {
+    "repo": "Jakubantalik/transitions.dev",
+    "ref": "main\tHEAD",
+    "sha": "67d5c679305a8a1eb7507d56c3f143c0b47602df",
+    "files": 32,
+    "synced_at": "2026-08-07T07:41:39.003541+00:00"
+  },
+  "ui-skills": {
+    "repo": "ibelick/ui-skills",
+    "ref": "main\tHEAD",
+    "sha": "2b3a114a3fcff079d73639a21710c595d4700a74",
+    "files": 9,
+    "synced_at": "2026-08-07T07:42:02.781156+00:00"
+  },
+  "design-motion-principles": {
+    "repo": "kylezantos/design-motion-principles",
+    "ref": "main\tHEAD",
+    "sha": "4a9ca879f24a361f4dca4174fe2da0f67b5ddee3",
+    "files": 15,
+    "synced_at": "2026-08-07T07:42:24.929254+00:00"
+  },
+  "motion": {
+    "repo": "Sagargupta16/claude-skills",
+    "ref": "main\tHEAD",
+    "sha": "bd2f42a66f2ed10c68629635b636eed9b01f2dd8",
+    "files": 4,
+    "synced_at": "2026-08-07T07:42:45.685207+00:00"
+  },
+  "interaction-design": {
+    "repo": "secondsky/claude-skills",
+    "ref": "main\tHEAD",
+    "sha": "2b93f5ac244ef4287312f0adfb662b73f9c806a8",
+    "files": 1,
+    "synced_at": "2026-08-07T07:43:19.106343+00:00"
+  },
+  "animation-micro-interaction-pack": {
+    "repo": "majiayu000/claude-skill-registry",
+    "ref": "main\tHEAD",
+    "sha": "4aa0e812a9d1f358c9eb12ac2e9a5d883f754d86",
+    "files": 2,
+    "synced_at": "2026-08-07T08:04:40.580439+00:00"
+  }
+}
