@@ -20,6 +20,7 @@ skills_collector 同步脚本
 """
 
 import json
+import hashlib
 import os
 import shutil
 import subprocess
@@ -53,7 +54,8 @@ def default_branch(repo_ssh):
     for line in r.stdout.splitlines():
         line = line.strip()
         if line.startswith("ref: refs/heads/"):
-            return line.split("/")[-1]
+            # 行形如 "ref: refs/heads/main\tHEAD"，tab 后还有 HEAD，按空白切第一字段即可
+            return line[len("ref: refs/heads/"):].split()[0]
     return "main"
 
 
@@ -125,17 +127,25 @@ def sync_local(entry, state):
     os.makedirs(target, exist_ok=True)
     shutil.copytree(local_path, target, dirs_exist_ok=True, ignore=ignore_filter)
 
-    # 本地项用内容指纹代替 git sha
-    snap = []
+    # 本地项用"内容指纹"代替 git sha：基于相对路径+大小+文件内容算哈希，
+    # 不依赖 mtime（copytree 覆盖会刷新 mtime，否则每次都被误判为更新）。
+    h = hashlib.sha256()
+    n_files = 0
     for root, _, files in os.walk(target):
         for f in sorted(files):
             p = os.path.join(root, f)
             try:
-                snap.append((os.path.relpath(p, target), os.path.getsize(p), int(os.path.getmtime(p))))
+                rel = os.path.relpath(p, target)
+                size = os.path.getsize(p)
+                h.update(rel.encode("utf-8"))
+                h.update(str(size).encode("utf-8"))
+                with open(p, "rb") as fh:
+                    for chunk in iter(lambda: fh.read(65536), b""):
+                        h.update(chunk)
+                n_files += 1
             except OSError:
                 pass
-    new_sha = "local:" + str(hash(tuple(snap)))
-    n_files = len(snap)
+    new_sha = "local:" + h.hexdigest()[:16]
     status = "updated" if (old_sha and old_sha != new_sha) else ("new" if not old_sha else "unchanged")
     state[name] = {
         "repo": "local",
