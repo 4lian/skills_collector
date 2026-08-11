@@ -120,6 +120,13 @@
       "repo": "majiayu000/claude-skill-registry",
       "subpath": "skills/data/animation-micro-interaction-pack",
       "note": "微交互预设，提取 skills/data/animation-micro-interaction-pack 子目录（源仓库体量较大，脚本用 sparse-checkout 只取该子目录）。"
+    },
+    {
+      "name": "galaxy",
+      "target": "ui/galaxy",
+      "source": "github",
+      "repo": "uiverse-io/galaxy",
+      "note": "Uiverse.io 3000+ 组件大集成，整库 vendoring（组件位于仓库根的各分类目录，无 subpath）。"
     }
   ]
 }
